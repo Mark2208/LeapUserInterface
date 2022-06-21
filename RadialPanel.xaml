@@ -1,0 +1,56 @@
+﻿<Window x:Class="LeapUserInterface.RadialPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeapUserInterface"
+        mc:Ignorable="d"
+        Title="RadialPanel" Height="208" Width="208" AllowsTransparency="True" WindowStyle="None" Background="#FFF0F0F0" Opacity="0.6">
+    <Window.Resources>
+        <Style x:Key="RadialScaleAnimation" TargetType="{x:Type Ellipse}">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="62" Duration="0:0:0.3" AutoReverse="true" />
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="62" Duration="0:0:0.3" AutoReverse="true"/>
+                                <ColorAnimation Storyboard.TargetProperty="Fill.Color" To="DarkCyan" Duration="0:0:0.5" AutoReverse="true"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,208,208" RadiusX="208" RadiusY="208"/>
+    </Window.Clip>
+    <Grid x:Name="BackGrid" MouseDown="BackGrid_MouseDown" Background="#FF464646" >
+
+
+        <Ellipse x:Name="Radial_Q1" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="109,15,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Ellipse x:Name="Radial_Q8" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="43,15,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Ellipse x:Name="Radial_Q7" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="8,75,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Ellipse x:Name="Radial_Q2" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="144,75,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Ellipse x:Name="Radial_Q6" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="43,135,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Ellipse x:Name="Radial_Q3" Fill="#FF171717" HorizontalAlignment="Left" Height="56" Margin="109,135,0,0" VerticalAlignment="Top" Width="56" Style="{StaticResource RadialScaleAnimation}"/>
+        <Label x:Name="LBL_SkipForward" Content="=🞂" HorizontalAlignment="Left" Margin="160,85,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF"/>
+        <Label x:Name="label_Copy" Content="🞀=" HorizontalAlignment="Left" Margin="21,85,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF"/>
+        <Label x:Name="label_Copy1" Content="+🕨" HorizontalAlignment="Left" Margin="122,146,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF"/>
+        <Label x:Name="label_Copy2" Content="-🕨" HorizontalAlignment="Left" Margin="58,146,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF"/>
+        <Label x:Name="label_Copy3" Content="⌃" HorizontalAlignment="Left" Margin="127,28,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF"/>
+        <Label x:Name="label_Copy4" Content="⌄" HorizontalAlignment="Left" Margin="59,21,0,0" VerticalAlignment="Top" FontSize="16" Foreground="#FFDFDFDF" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.782"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Ellipse x:Name="Ellipse_LeftSignal" Fill="#FFCECECE" HorizontalAlignment="Left" Height="18" VerticalAlignment="Top" Width="18" Margin="95,93,0,0"/>
+    </Grid>
+</Window>

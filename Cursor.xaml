@@ -1,0 +1,14 @@
+﻿<Window x:Name="CursorWindow" x:Class="LeapUserInterface.Cursor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeapUserInterface"
+        mc:Ignorable="d"
+        Title="Cursor" Height="30" Width="30" AllowsTransparency="True" WindowStyle="None" Opacity="0.8" Background="#FFFFA6A2">
+
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,30,30" RadiusX="100" RadiusY="100"/>
+    </Window.Clip>
+    <Grid Name="BackGrid"  Background="#FF8C8C8C"/>
+</Window>
